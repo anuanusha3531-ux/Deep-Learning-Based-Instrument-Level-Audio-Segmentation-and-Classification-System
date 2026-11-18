@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Prediction Results
+    </title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static',
+        filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <!-- Header -->
+        <div class="header">
+
+            <h1>
+                🎵 Instrument Prediction Results
+            </h1>
+
+            <p>
+                AI Powered Multi-Instrument
+                Recognition System
+            </p>
+
+        </div>
+
+        <!-- Audio Player -->
+        <div class="audio-section">
+
+            <h2>
+                🎧 Uploaded Audio
+            </h2>
+
+            <audio controls>
+
+    <source
+        src="{{ url_for(
+            'uploaded_file',
+            filename=audio_filename
+        ) }}"
+        type="audio/wav"
+    >
+
+    Your browser does not support audio.
+
+</audio>
+
+        </div>
+
+        <!-- Timeline Prediction -->
+        <div class="results-section">
+
+            <h2>
+                ⏱ Timeline Predictions
+            </h2>
+
+            {% for result in results %}
+
+            <div class="result-box">
+
+                <h3>
+
+                    {{ result.start }}s
+                    -
+                    {{ result.end }}s
+
+                </h3>
+
+                <div class="instrument-tags">
+
+                    {% for instrument in result.instruments %}
+
+                    <span class="tag">
+
+                        {{ instrument }}
+
+                    </span>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- MFCC Graph -->
+        <div class="graph-section">
+
+            <h2>
+                📊 MFCC Analysis
+            </h2>
+
+            <img
+                src="{{ url_for('static',
+                filename='mfcc/mfcc_prediction.png') }}"
+                class="graph-image"
+            >
+
+        </div>
+
+        <!-- Spectrogram -->
+        <div class="graph-section">
+
+            <h2>
+                🌈 Spectrogram Analysis
+            </h2>
+
+            <img
+                src="{{ url_for('static',
+                filename='spectrograms/spectrogram_prediction.png') }}"
+                class="graph-image"
+            >
+
+        </div>
+
+        <!-- Upload Another -->
+        <div class="back-button">
+
+            <a href="/">
+
+                🔄 Upload Another Audio
+
+            </a>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+
+            <p>
+
+                Developed using Deep Learning,
+                CNN, MUSDB18 and IRMAS Dataset 🎵🤖
+
+            </p>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

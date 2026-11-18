@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Multi-Instrument Audio Segmentation
+    </title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static',
+        filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <!-- Header -->
+        <div class="header">
+
+            <h1>
+                🎵 Multi-Instrument Audio Segmentation System
+            </h1>
+
+            <p>
+                AI Powered Instrument Recognition,
+                Timeline Analysis and Audio Visualization
+            </p>
+
+        </div>
+
+        <!-- Upload Card -->
+        <div class="upload-card">
+
+            <h2>
+                Upload Audio File
+            </h2>
+
+            <form
+                method="POST"
+                enctype="multipart/form-data"
+            >
+
+                <input
+                    type="file"
+                    name="audio"
+                    accept=".wav,.mp3,.stem.mp4"
+                    required
+                >
+
+                <br><br>
+
+                <button type="submit">
+
+                    🎧 Analyze Audio
+
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- Features Section -->
+        <div class="features">
+
+            <div class="feature-box">
+
+                <h3>🎼 Instrument Detection</h3>
+
+                <p>
+                    Detect multiple instruments
+                    from uploaded audio.
+                </p>
+
+            </div>
+
+            <div class="feature-box">
+
+                <h3>📊 MFCC Analysis</h3>
+
+                <p>
+                    Generate MFCC features
+                    for audio understanding.
+                </p>
+
+            </div>
+
+            <div class="feature-box">
+
+                <h3>🌈 Spectrogram</h3>
+
+                <p>
+                    Visualize frequency and
+                    time-based audio patterns.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+
+            <p>
+
+                Developed using Deep Learning,
+                MUSDB18 and IRMAS Dataset 🎵🤖
+
+            </p>
+            
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

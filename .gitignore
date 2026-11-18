@@ -1,0 +1,17 @@
+
+venv/
+env/
+__pycache__/
+*.pyc
+.vscode/
+
+dataset/
+extracted_features/
+uploads/
+
+*.wav
+*.mp3
+*.mp4
+
+.env
+.ipynb_checkpoints/
